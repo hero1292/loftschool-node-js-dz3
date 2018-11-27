@@ -1,21 +1,17 @@
-const low = require('lowdb');
-const FileSync = require('lowdb/adapters/FileSync');
-const adapter = new FileSync('./database/db.json');
-const db = low(adapter);
-
+const db = require('../database/config');
 const path = require('path');
 
-exports.Admin = (req, res) => {
+exports.Admin = async (req, res) => {
   const adminViewModel = {
     title: 'Admin page',
     skills: db.get('skills').value(),
     msgskill: req.flash('msgskill'),
     msgfile: req.flash('msgfile')
   };
-  res.render('pages/admin', adminViewModel);
+  await res.render('pages/admin', adminViewModel);
 };
 
-exports.AddProduct = (req, res) => {
+exports.AddProduct = async (req, res) => {
   const newProduct = {
     src: path.join('./assets/img/products', req.file.filename),
     name: req.body.name,
@@ -27,10 +23,10 @@ exports.AddProduct = (req, res) => {
     .write();
 
   req.flash('msgfile', 'Product successfully created!');
-  res.redirect('/admin');
+  await res.redirect('/admin');
 };
 
-exports.AddSkills = (req, res) => {
+exports.AddSkills = async (req, res) => {
   const skills = [
     { name: 'age', value: parseInt(req.body.age) || 0 },
     { name: 'concerts', value: parseInt(req.body.concerts) || 0 },
@@ -44,5 +40,5 @@ exports.AddSkills = (req, res) => {
       .write();
   });
   req.flash('msgskill', 'Skill values successfully updated!');
-  res.redirect('/admin');
+  await res.redirect('/admin');
 };

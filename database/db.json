@@ -1,25 +1,25 @@
 {
   "users": [
     {
-      "id": "_OKMF81BBPQKORKP8E318H2TKYVHD68T9",
+      "id": "_TRIUQ4SWBIRV48D1X8LIVTX4646NWSS2",
       "email": "test@mail.ru",
-      "password": "$2a$08$Eu7EF1Ko9MgrqkmHcEkq2uEb//8T4xUnUAyXUvv2Mp7Ac/ixZKSdy"
+      "password": "$2a$08$yxBQ220ZqkG3jJxjuvgWzO1Odk4bxE5qGn/e33NGzySjHODSAuuaK"
     }
   ],
   "skills": [
     {
       "name": "age",
-      "value": 23,
+      "value": 2,
       "description": "Возраст начала занятий на скрипке"
     },
     {
       "name": "concerts",
-      "value": 44,
+      "value": 2,
       "description": "Концертов отыграл"
     },
     {
       "name": "cities",
-      "value": 66,
+      "value": 2,
       "description": "Максимальное число городов в туре"
     },
     {
@@ -78,6 +78,11 @@
       "src": "./assets/img/products/1543086087009_default_avatar.png",
       "name": "test",
       "price": 280
+    },
+    {
+      "src": "assets\\img\\products\\1543323691167_1.-ejmiacin.png",
+      "name": "Evgeniy",
+      "price": 22
     }
   ]
 }

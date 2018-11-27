@@ -1,21 +1,17 @@
-const low = require('lowdb');
-const FileSync = require('lowdb/adapters/FileSync');
-const adapter = new FileSync('./database/db.json');
-const db = low(adapter);
-
+const db = require('../database/config');
 const transporter = require('../utils/mail');
 
-exports.Index = (req, res) => {
+exports.Index = async (req, res) => {
   const indexViewModel = {
     title: 'Home page',
     skills: db.get('skills').value(),
     products: db.get('products').value(),
     mail_status: req.flash('message_status')
   };
-  res.render('pages/index', indexViewModel);
+  await res.render('pages/index', indexViewModel);
 };
 
-exports.SendEmail = (req, res) => {
+exports.SendEmail = async (req, res) => {
   const mailOptions = {
     from: '<test@gmail.com>',
     to: 'test@gmail.com',
@@ -39,6 +35,6 @@ exports.SendEmail = (req, res) => {
     console.log('Message sent: %s', info.messageId);
   });
 
-  req.send('message_status', 'Message successfully sended!');
-  res.redirect('/#feedback-form');
+  req.flash('message_status', 'Message successfully sended!');
+  await res.redirect('/#feedback-form');
 };
