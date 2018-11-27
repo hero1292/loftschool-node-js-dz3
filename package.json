@@ -1,6 +1,6 @@
 {
   "name": "loftschool-dz3",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "main": "./bin/www",
   "repository": {
@@ -11,14 +11,28 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "cookie-parser": "~1.4.3",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "connect-flash": "^0.1.1",
+    "cors": "^2.8.5",
     "debug": "~2.6.9",
     "express": "~4.16.0",
+    "express-session": "^1.15.6",
     "http-errors": "~1.6.2",
+    "jsonwebtoken": "^8.4.0",
+    "lowdb": "^1.0.0",
     "morgan": "~1.9.0",
+    "multer": "^1.4.1",
+    "nodemailer": "^4.7.0",
     "pug": "2.0.0-beta11"
   },
   "devDependencies": {
+    "eslint": "^5.9.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
     "nodemon": "^1.18.6"
   }
 }
