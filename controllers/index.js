@@ -3,7 +3,7 @@ const FileSync = require('lowdb/adapters/FileSync');
 const adapter = new FileSync('./database/db.json');
 const db = low(adapter);
 
-const transporter = require('../utils/MailService');
+const transporter = require('../utils/mail');
 
 exports.Index = (req, res) => {
   const indexViewModel = {
