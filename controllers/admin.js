@@ -1,5 +1,4 @@
 const db = require('../database/config');
-const path = require('path');
 
 exports.Admin = async (req, res) => {
   const adminViewModel = {
@@ -13,7 +12,7 @@ exports.Admin = async (req, res) => {
 
 exports.AddProduct = async (req, res) => {
   const newProduct = {
-    src: path.join('./assets/img/products', req.file.filename),
+    src: `./assets/img/products/${req.file.filename}`,
     name: req.body.name,
     price: parseInt(req.body.price)
   };
