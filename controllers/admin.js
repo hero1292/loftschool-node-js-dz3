@@ -31,7 +31,7 @@ exports.AddSkills = async (req, res) => {
     { name: 'age', value: parseInt(req.body.age) || 0 },
     { name: 'concerts', value: parseInt(req.body.concerts) || 0 },
     { name: 'cities', value: parseInt(req.body.cities) || 0 },
-    { name: 'year', value: parseInt(req.body.year) || 0 }
+    { name: 'year', value: parseInt(req.body.years) || 0 }
   ];
   skills.forEach(skill => {
     db.get('skills')
